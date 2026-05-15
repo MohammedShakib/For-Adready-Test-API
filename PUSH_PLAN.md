@@ -1,6 +1,6 @@
 # Push Plan
 
-Current push: **Part 1 of 3**
+Current push: **Part 2 of 3**
 
 ## Part 1
 - Repo foundation and push-tracking note
@@ -9,6 +9,7 @@ Current push: **Part 1 of 3**
 ## Part 2
 - Sign-in / auth gate
 - Workspace connection panel
+- This commit is the active `test` branch push
 
 ## Part 3
 - Analyze flow
@@ -16,5 +17,5 @@ Current push: **Part 1 of 3**
 - Assets, UI polish, and final cleanup
 
 ## Reminder
-- Only Part 1 is being pushed right now.
-- Parts 2 and 3 stay local until the next pushes.
+- Only Part 2 is being pushed right now.
+- Part 3 stays local until the next push.

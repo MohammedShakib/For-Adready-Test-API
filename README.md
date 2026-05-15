@@ -11,7 +11,7 @@ This repo is being pushed in 3 parts:
 2. Part 2: sign-in / auth gate and connection panel
 3. Part 3: analyze / generate flow and final polish
 
-Current push: Part 1 only.
+Current push: Part 2 only on the `test` branch.
 
 Follows `connectapi-test (1).txt` with combined flow:
 1. Analyze image
