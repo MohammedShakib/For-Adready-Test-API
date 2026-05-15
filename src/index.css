@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+html {
+  min-height: 100%;
+  background: #020617;
+}
+
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #020617;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: inherit;
+}
+
+.fade-up {
+  animation: fade-up 0.55s ease-out both;
+}
+
+.motion-orb {
+  animation: orb-drift 14s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.motion-orb-a {
+  animation-duration: 16s;
+}
+
+.motion-orb-b {
+  animation-duration: 18s;
+  animation-delay: -4s;
+}
+
+.motion-orb-c {
+  animation-duration: 20s;
+  animation-delay: -8s;
+}
+
+.motion-panel {
+  animation: panel-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.motion-panel-left {
+  animation-delay: 120ms;
+}
+
+.motion-panel-right {
+  animation-delay: 210ms;
+}
+
+.motion-stat {
+  animation: card-float 6s ease-in-out infinite;
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.motion-stat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(103, 232, 249, 0.24);
+  box-shadow: 0 16px 40px -28px rgba(15, 23, 42, 0.6);
+}
+
+.stagger-1 {
+  animation-delay: 140ms;
+}
+
+.stagger-2 {
+  animation-delay: 260ms;
+}
+
+.stagger-3 {
+  animation-delay: 380ms;
+}
+
+.motion-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.motion-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.22), transparent 75%);
+  transition: transform 700ms ease;
+}
+
+.motion-cta:hover::after {
+  transform: translateX(120%);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes panel-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(22px, -18px, 0) scale(1.05);
+  }
+  66% {
+    transform: translate3d(-16px, 24px, 0) scale(0.96);
+  }
+}
+
+@keyframes card-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .motion-orb,
+  .motion-panel,
+  .motion-stat,
+  .motion-cta::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
